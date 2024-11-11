@@ -1,16 +1,16 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { MenuComponent } from "./components/menu/menu.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, MenuComponent, ],
   template: `
-    <h1>Welcome to {{title}}!</h1>
-
+    <app-menu/>
     <router-outlet />
-  `,
-  styles: [],
+  `
+
 })
 export class AppComponent {
   title = 'angularstandalone';

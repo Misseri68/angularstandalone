@@ -1,0 +1,39 @@
+<h1>Plantillas multiples</h1>
+<!--Es mejor usar el form porque evita problemas en la nube etc etc-->
+<form #funcionesForm="ngForm">
+    <select *ngIf="funciones" class="form-select" 
+    #selectfunciones multiple 
+    (change)="mostrarPlantilla()">
+    <option *ngFor="let funcion of funciones" [value]="funcion">
+        {{funcion}}
+    </option>
+</select>
+</form>
+
+<div *ngIf="empleados" class="container">
+    <h2 class="text-center mb-4">Detalles de la plantilla seleccionada</h2>
+    <table class="table table-striped table-bordered">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">ID Empleado</th>
+                <th scope="col">ID Hospital</th>
+                <th scope="col">ID Sala</th>
+                <th scope="col">Apellido</th>
+                <th scope="col">Función</th>
+                <th scope="col">Turno</th>
+                <th scope="col">Salario</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let plantilla of empleados">
+                <td>{{plantilla.idEmpleado}}</td>
+                <td>{{plantilla.idHospital}}</td>
+                <td>{{plantilla.idSala}}</td>
+                <td>{{plantilla.apellido}}</td>
+                <td>{{plantilla.funcion}}</td>
+                <td>{{plantilla.turno}}</td>
+                <td>{{plantilla.salario}}</td> 
+            </tr>
+        </tbody>
+    </table>
+</div>

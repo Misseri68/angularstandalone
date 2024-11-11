@@ -1,0 +1,8 @@
+<h1>Coches!</h1>
+<div>
+    <ul *ngIf="coches.length > 0" class="list-group">
+        <li *ngFor="let coche of coches" class="list-group-item">
+            {{coche.marca}}
+        </li>
+    </ul>
+</div>
